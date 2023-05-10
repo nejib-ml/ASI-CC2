@@ -20,6 +20,7 @@ public class LocationDaoImpl implements LocationDao {
 		em.persist(bean);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<LocationBean> getLocations() {
 		Query request = em.createQuery("select l from LocationBean l");
