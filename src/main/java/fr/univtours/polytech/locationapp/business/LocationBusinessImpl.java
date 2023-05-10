@@ -44,7 +44,7 @@ public class LocationBusinessImpl implements LocationBusinessLocal {
 				double lon = addresses.get(0).getGeometry().getCoordinates().get(0);
 				double lat = addresses.get(0).getGeometry().getCoordinates().get(1);
 				
-				double temp = weatherDao.getWeather(lon, lat).getTemp() - 273.5;
+				double temp = weatherDao.getWeather(lon, lat).getTemp() - 273.15;
 				String formattedTemp = String.format("%.2f", temp);
 				
 				location.setTemperature(String.valueOf(formattedTemp));

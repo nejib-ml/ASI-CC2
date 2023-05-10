@@ -26,7 +26,7 @@
 					- ${loc.city} (${loc.zipCode})<br /> <br /> <br /> Prix pour une
 					nuit : ${loc.nightPrice} euros
 				</p>
-				<br /> <br /> <br /> Température : ${loc.temperature}
+				<br /> <br /> <br /> Température : ${loc.temperature} °C
 				</p>
 				<p>
 					<img src="data:image/jpg;base64,${loc.base64Image}" width="200px" />
