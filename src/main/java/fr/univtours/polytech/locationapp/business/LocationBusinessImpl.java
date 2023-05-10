@@ -38,7 +38,6 @@ public class LocationBusinessImpl implements LocationBusinessLocal {
 		
 		for (LocationBean location : locations) {
 			List<Feature> addresses = addressDao.getAddresses(location.getCity() + " " + location.getZipCode());
-			//List<Feature> addresses = addressDao.getAddresses("jhgjhgjhgjhgjh" + " " + "khgjgfjjhgjhg");
 			
 			if(addresses.size() != 0){
 				double lon = addresses.get(0).getGeometry().getCoordinates().get(0);
