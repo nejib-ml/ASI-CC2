@@ -13,7 +13,6 @@ import fr.univtours.polytech.locationapp.dao.LocationDao;
 import fr.univtours.polytech.locationapp.dao.WeatherDao;
 import fr.univtours.polytech.locationapp.model.LocationBean;
 import fr.univtours.polytech.locationapp.model.address.Feature;
-import fr.univtours.polytech.locationapp.model.weather.Main;
 
 @Stateless
 public class LocationBusinessImpl implements LocationBusinessLocal {
@@ -37,7 +36,7 @@ public class LocationBusinessImpl implements LocationBusinessLocal {
 		List<LocationBean> locations = locationDao.getLocations();
 		
 		for (LocationBean location : locations) {
-			List<Feature> addresses = addressDao.getAddresses(location.getCity() + " " + location.getZipCode());
+			List<Feature> addresses = addressDao.getAddresses(location.getAddress() + " " + location.getZipCode());
 			
 			if(addresses.size() != 0){
 				double lon = addresses.get(0).getGeometry().getCoordinates().get(0);
